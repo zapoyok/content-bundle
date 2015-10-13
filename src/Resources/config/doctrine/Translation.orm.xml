@@ -1,0 +1,43 @@
+
+<doctrine-mapping
+    xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
+
+    <entity name="Zapoyok\ContentBundle\Entity\Translation"
+        table="content__page_translations"
+        repository-class="Zapoyok\ContentBundle\Entity\TranslationRepository"
+
+        >
+         <id name="id" type="integer" column="id">
+             <generator strategy="AUTO" />
+         </id>
+
+          <!--<id name="page" association-key="true" />-->
+          <!--<id name="translation" association-key="true" />-->
+
+         <unique-constraints>
+             <unique-constraint columns="page_id,translation_id" name="trans_idx" />
+         </unique-constraints>
+
+
+         <many-to-one field="page" target-entity="Page" inversed-by="translations" orphan-removal="true">
+           <join-column name="page_id" referenced-column-name="id" />
+        </many-to-one>
+
+         <many-to-one field="translation" target-entity="Page" orphan-removal="true">
+            <join-column name="translation_id" referenced-column-name="id" />
+        </many-to-one>
+
+        <field name="createdAt" column="created_at" type="datetime" nullable="true" >
+            <gedmo:timestampable on="create"/>
+        </field>
+
+        <field name="updatedAt" column="updated_at" type="datetime" nullable="true" >
+            <gedmo:timestampable on="update"/>
+        </field>
+
+    </entity>
+
+</doctrine-mapping>

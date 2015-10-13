@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2015-01-26T15:01:36Z" source-language="en" target-language="fr" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="de3290ab895c6657d8b5b5b886a5b2097a30ee73" resname="breadcrumb.link_page_list">
+        <jms:reference-file line="19">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>breadcrumb.link_page_list</source>
+        <target state="new">Pages</target>
+      </trans-unit>
+      <trans-unit id="b1ad1a18ea110847e18d0307925c43228c0b4455" resname="form.label_message">
+        <jms:reference-file line="16">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>form.label_message</source>
+        <target state="new">Message</target>
+      </trans-unit>
+      <trans-unit id="919e224cd9d3638cfe6ce711729306df1c45671a" resname="form.label_meta_description">
+        <jms:reference-file line="15">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>form.label_meta_description</source>
+        <target state="new">Meta description</target>
+      </trans-unit>
+      <trans-unit id="a1adcd3b651c6d0c9421b831d22a3e35374385c3" resname="form.label_meta_keywords">
+        <jms:reference-file line="14">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>form.label_meta_keywords</source>
+        <target state="new">Mots clés</target>
+      </trans-unit>
+      <trans-unit id="351ca0647e388dabb352a7d75524351ad270df22" resname="form.label_parent">
+        <jms:reference-file line="13">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>form.label_parent</source>
+        <target state="new">Parent</target>
+      </trans-unit>
+      <trans-unit id="f2e9d4e861f17de969ffad5c9b8b4aba93a46d16" resname="form.label_permalink">
+        <jms:reference-file line="11">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>form.label_permalink</source>
+        <target state="new">Lien</target>
+      </trans-unit>
+      <trans-unit id="d2163d032c7f47621b8e5901b37b95a1bbd0a16c" resname="form.label_title">
+        <jms:reference-file line="12">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>form.label_title</source>
+        <target state="new">Titre</target>
+      </trans-unit>
+      <trans-unit id="428260a2aa4d54d4b730ebb3755f855dd9b176fd" resname="list.label_permalink">
+        <jms:reference-file line="8">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>list.label_permalink</source>
+        <target state="new">Lien</target>
+      </trans-unit>
+      <trans-unit id="d4fae24d3dd3bad34d7a4bbec7204d4ea4ff1bee" resname="list.label_title">
+        <jms:reference-file line="7">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>list.label_title</source>
+        <target state="new">Titre</target>
+      </trans-unit>
+      <trans-unit id="7435afce2a3133caaab412355481e33daf0fe282" resname="zapoyok.admin.content.label">
+        <jms:reference-file line="1">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>zapoyok.admin.content.label</source>
+        <target state="new">Contenus</target>
+      </trans-unit>
+      <trans-unit id="5075d9d940e49f593893e1afac3e8553c33ee629" resname="zapoyok_content.admin.page.label">
+        <jms:reference-file line="2">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>zapoyok_content.admin.page.label</source>
+        <target state="new">Pages</target>
+      </trans-unit>
+      <trans-unit id="zapoyok_content.form.help.permalink.locked" resname="zapoyok_content.form.help.permalink.locked">
+        <jms:reference-file line="2">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>zapoyok_content.form.help.permalink.locked</source>
+        <target state="new"><![CDATA[L'édition de l'url a été figée. Utilisez la commande <code>app/console zapoyok:content:page:unlock PERMALINK</code> pour la déverrouiller]]></target>
+      </trans-unit>
+      <trans-unit id="zapoyok_content.form.help.permalink" resname="zapoyok_content.form.help.permalink">
+        <jms:reference-file line="2">Resources/views/fakei18n.html.twig</jms:reference-file>
+        <source>zapoyok_content.form.help.permalink</source>
+        <target state="new"><![CDATA[L'url <strong>doit</strong> commencer par un <code>/</code> et être unique dars le système.<br/>Il sera utilisé pour faire le lien de la page.]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

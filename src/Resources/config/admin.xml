@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd"
+    >
+    <services>
+
+        <service id="zapoyok_content.admin.page"
+            class="Zapoyok\ContentBundle\Admin\PageAdmin">
+            <tag name="sonata.admin" manager_type="orm"
+                group="zapoyok_content.admin.content.label"
+                label="zapoyok_content.admin.page.label"
+                label_catalogue="admin"
+                label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>Zapoyok\ContentBundle\Entity\Page</argument>
+            <argument />
+            <call method="setTranslationDomain">
+                <argument>admin</argument>
+            </call>
+            <call method="setLanguages">
+                <argument type="expression">container.hasParameter('available_locales') ? parameter('available_locales') : parameter('locale')</argument>
+            </call>
+
+<!--             <call method="setTemplates"> -->
+<!--                 <argument type="collection"> -->
+<!--                     <argument key="inner_list_row">ZapoyokContentBundle:Page:inner_row_page.html.twig</argument> -->
+<!--                     <argument key="base_list_field">SonataAdminBundle:CRUD:base_list_flat_field.html.twig</argument> -->
+<!--                 </argument> -->
+<!--             </call> -->
+
+
+        </service>
+        <service id="zapoyok_content.admin.translation"
+            class="Zapoyok\ContentBundle\Admin\TranslationAdmin">
+            <tag name="sonata.admin" manager_type="orm"
+                group="zapoyok_content.admin.content.label"
+                label="zapoyok_content.admin.page.label"
+                label_catalogue="admin"
+                label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>Zapoyok\ContentBundle\Entity\Translation</argument>
+            <argument />
+            <call method="setTranslationDomain">
+                <argument>admin</argument>
+            </call>
+        </service>
+    </services>
+
+</container>

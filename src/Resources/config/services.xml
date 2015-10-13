@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+
+
+        <service id="zapoyok_content.page.manager" class="Zapoyok\ContentBundle\Entity\PageManager">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+        </service>
+
+        <service id="zapoyok_content.page.url_matcher" class="Zapoyok\ContentBundle\Routing\Matcher\PageUrlMatcher">
+            <argument type="service" id="zapoyok_content.page.manager" />
+            <argument type="service" id="logger" />
+            <call method="setPageManager">
+                <argument type="service" id="zapoyok_content.page.manager" />
+            </call>
+        </service>
+
+        <service id="zapoyok_content.page.router_listener"
+                 class="Zapoyok\ContentBundle\Listener\PageRouterListener">
+            <argument type="service" id="zapoyok_content.page.url_matcher" />
+            <argument type="service" id="logger" />
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" priority="33" />
+            <tag name="monolog.logger" channel="request" />
+        </service>
+
+        <service id="zapoyok_content.translation.manager" class="Zapoyok\ContentBundle\Entity\TranslationManager">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="zapoyok_content.page.manager" />
+        </service>
+
+        <service id="zapoyok_content.page.listener"
+            class="Zapoyok\ContentBundle\Listener\Translation">
+            <tag name="doctrine.event_listener" event="postPersist" />
+            <tag name="doctrine.event_listener" event="postUpdate" />
+            <argument type="service" id="service_container" />
+        </service>
+    </services>
+
+</container>

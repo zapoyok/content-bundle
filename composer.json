@@ -1,0 +1,28 @@
+{
+    "name": "zapoyok/content-bundle",
+    "description": "Content",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "FIX Jérôme",
+            "email": "jerome.fix@zapoyok.info"
+        }
+    ],
+    "keywords": [],
+    "license": [
+        "Apache-2.0"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zapoyok\\ContentBundle\\": "src"
+        }
+    },
+    "require": {
+        "egeloen/ckeditor-bundle": "~2.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

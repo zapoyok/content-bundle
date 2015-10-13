@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="Zapoyok\ContentBundle\Entity\Page">
+
+        <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+            <option name="fields">permalink</option>
+            <option name="message">This permalink already exist.</option>
+        </constraint>
+
+        <property name="title">
+            <constraint name="NotBlank" />
+            <constraint name="Length">
+                <option name="max">255</option>
+            </constraint>
+        </property>
+
+        <property name="permalink">
+            <constraint name="NotBlank" />
+            <constraint name="Length">
+                <option name="max">255</option>
+            </constraint>
+        </property>
+
+        <property name="message">
+            <constraint name="NotBlank" />
+        </property>
+
+        <property name="name">
+            <constraint name="Length">
+                <option name="max">255</option>
+            </constraint>
+        </property>
+
+        <property name="locked">
+        <constraint name="Choice">
+            <option name="choices">
+                <value>1</value>
+                <value>0</value>
+            </option>
+            <option name="message">Choose a value value (true or false).</option>
+        </constraint>
+    </property>
+
+    </class>
+</constraint-mapping>
